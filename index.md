@@ -12,10 +12,12 @@ At SitePerf we took a different approach. We allow only programmatic configurati
 
 # Terraform provider documentation
 
+
 ## Resources
 
 This section describe available Terraform resources.
-
+  
+  
 ### Resource: siteperf_account
 ---
 Creates an SitePerf account. 
@@ -24,8 +26,8 @@ Creates an SitePerf account.
 
 ```hcl
 resource "siteperf_account" "test_account" {
-  name = 
-  description = "Test account for testing purposes."
+  name = "test_account"
+  description = "Test account for testing environments."
 }
 ```
 
