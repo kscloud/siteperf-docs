@@ -16,10 +16,10 @@ At SitePerf we took a different approach. We allow only programmatic configurati
 ## Resources
 
 This section describe available Terraform resources.
-  
+
+---
 
 ### Resource: siteperf_account
----
 Creates an SitePerf account. 
 
 #### Example usage
@@ -45,12 +45,11 @@ The following attributes are exported
 
 * `name` - (Required) - Name of the account
 * `description` - (Optional) - Description of the account
-  
 
-
+---
 
 ### Resource: siteperf_slack_alert_handler
----
+
 Configures an Slack alert handler allowing for routing alert notifications to Slack channel. 
 
 #### Example usage
@@ -68,7 +67,6 @@ The following arguments are available
 
 * `account_id` - (Required) - Id of the SitePerf account. Reference siteperf_account resource.
 * `webhook_url` - (Required) - Slack webhook URL.
-
 
 #### Attributes Reference
 
