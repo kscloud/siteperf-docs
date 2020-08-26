@@ -1,6 +1,5 @@
 # Terraform provider
 
-
 # Resources
 
 This section describe available Terraform resources.
@@ -25,7 +24,6 @@ The following arguments are available
 
 * `name` - (Required) - Name of the account
 * `description` - (Optional) - Description of the account
-
 
 ### Attributes Reference
 
@@ -112,14 +110,3 @@ Specifies alerting for this uptime monitor
 ### Attributes Reference
 
 * `id` - Id of this uptime monitor. 
-
-
-
-
-
-
-
-
-
-
-

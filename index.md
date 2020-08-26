@@ -9,4 +9,6 @@ As a modern engineers we all prefere to utilize the Infrastructure as Code princ
 
 At SitePerf we took a different approach. We allow only programmatic configuration through API - to make it easy we provide a fully operational Terraform provider that can configure literally every aspect of your SitePerf account.
 
+## Documentation
 
+* [Terraform provider documentation](https://kscloud.github.io/siteperf-docs/terraform-provider.html)
