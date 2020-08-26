@@ -1,37 +1,50 @@
-## Welcome to GitHub Pages
+# About SitePerf
+SitePerf is an ultimate endpoint monitoring tool for DevOps and QA Engineers. 
 
-You can use the [editor on GitHub](https://github.com/kscloud/siteperf.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Configuration
+Over last several years we have used multiple different tools. They usually had one thing in common - inconvenient configuration using clumsy and slow UI interface. 
 
-### Markdown
+As a modern DevOps Engineer we all prefer to use Infrastructure as Code - yet many of those tools do not provide proper public APIs to manage them. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+At SitePerf we took a different approach. We allow only programmatic configuration through API - to make it easy we provide a fully operational Terraform provider that can configure literally every aspect of your SitePerf account.
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+# Terraform provider documentation
 
-- Bulleted
-- List
+## Resources
 
-1. Numbered
-2. List
+This section describe available Terraform resources.
 
-**Bold** and _Italic_ and `Code` text
+### Resource: siteperf_account
 
-[Link](url) and ![Image](src)
+Creates an SitePerf account. 
+
+#### Example usage
+
+```hcl
+resource "siteperf_account" "test_account" {
+  name = 
+  description = "Test account for testing purposes."
+}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### Argument Reference
 
-### Jekyll Themes
+The following arguments are available
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kscloud/siteperf.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* `name` - (Required) - Name of the account
+* `description` - (Optional) - Description of the account
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+#### Attributes Reference
+
+The following attributes are exported
+
+* `name` - (Required) - Name of the account
+* `description` - (Optional) - Description of the account
+
+
+
+
+
