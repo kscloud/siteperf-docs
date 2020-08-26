@@ -112,7 +112,7 @@ The following arguments are available
 * `success_code` - (Optional) - Return code which should be considered successful. Defaults to 200.
 * `schedule` - (Optional) - One of: `every_1m`, `every_5m`. Defaults to `every_1m`.
 
-#### alert block
+#### Optional block: alert
 
 Specifies alerting for this uptime monitor
 
