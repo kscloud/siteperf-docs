@@ -3,12 +3,11 @@
 # Resources
 
 This section describe available Terraform resources.
-
 ---
 
 ## Resource: siteperf_account
 Creates an SitePerf account. 
-a
+
 ### Example usage
 
 ```terraform
@@ -31,7 +30,6 @@ The following attributes are exported
 
 * `name` - (Required) - Name of the account
 * `description` - (Optional) - Description of the account
-
 ---
 
 ## Resource: siteperf_slack_alert_handler
@@ -57,7 +55,6 @@ The following arguments are available
 ### Attributes Reference
 
 * `id` - Id of this alert handler. 
-
 ---
 
 ## Resource: siteperf_uptime_monitor
@@ -86,7 +83,6 @@ resource "siteperf_uptime_monitor" "example_monitor" {
     metric = "uptime"
   }
 }
-
 ```
 
 ### Argument Reference
