@@ -1,1 +1,5 @@
 remote_theme: pmarsceill/just-the-docs
+title: SitePerf Documentation
+description: User documentation for SitePerf tool
+back_to_top: true
+back_to_top_text: "Back to top"
