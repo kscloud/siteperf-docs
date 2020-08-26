@@ -1,4 +1,4 @@
-# About SitePerf
+# About
 SitePerf is an ultimate endpoint monitoring tool for DevOps and QA Engineers. 
 
 
