@@ -1,4 +1,4 @@
-# Terraform provider documentation
+# Terraform provider
 
 
 # Resources
