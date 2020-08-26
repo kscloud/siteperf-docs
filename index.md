@@ -24,7 +24,7 @@ Creates an SitePerf account.
 
 ### Example usage
 
-```hcl
+```terraform
 resource "siteperf_account" "test_account" {
   name = "test_account"
   description = "Test account for testing environments."
@@ -54,7 +54,7 @@ Configures an Slack alert handler allowing for routing alert notifications to Sl
 
 ### Example usage
 
-```hcl
+```terraform
 resource "siteperf_alert_handler_slack" "slack_alerts" {
   account_id  = siteperf_account.test_account.id
   webhook_url = "https://hooks.slack.com/services/SOME/WEBHOOK/URL"
@@ -80,7 +80,7 @@ Configures an uptime monitor for a URL.
 
 ### Example usage
 
-```hcl
+```terraform
 resource "siteperf_uptime_monitor" "example_monitor" {
   account_id = siteperf_account.test_account.id
   url = "https://kscloud.pl"
