@@ -67,13 +67,14 @@ resource "siteperf_uptime_monitor" "example_monitor" {
   url = "https://kscloud.pl"
   
   success_code = 200
-  schedule = "every_1m"
+  every = "1m"
 
   alert {
     handler_id = siteperf_alert_handler_slack.alerts.id
-    metric = "avg_response_time"
+    metric = "response_time"
     crit = 9
     warn = 8
+    window = "5m"
   }
 
   alert {
@@ -90,16 +91,17 @@ The following arguments are available
 * `account_id` - (Required) - Id of the SitePerf account. Reference `siteperf_account` resource.
 * `url` - (Required) - URL to create uptime monitor for.
 * `success_code` - (Optional) - Return code which should be considered successful. Defaults to 200.
-* `schedule` - (Optional) - One of: `every_1m`, `every_5m`. Defaults to `every_1m`.
+* `every` - (Optional) - One of: `1m`, `5m`. Defaults to `1m`. How often the check is run.
 
 ### Optional block: alert
 
 Specifies alerting for this uptime monitor
 
 * `handler_id` - (Required) - The alert handler for this alert. Reference for example the `siteperf_slack_alert_handler` resource.
-* `metric` - (Required) - One of: `uptime`, `avg_response_time`
+* `metric` - (Required) - One of: `uptime`, `response_time`
 * `crit` - (Optional) - Critical threshold. Depending on a metric chosen it might be required value,
 * `warn` - (Optional) - Warining threshold. Depending on a metric chosen it might be required value
+* `window` - (Optional) - Value 1m,2m,3m...60m. Time interval used to calculate the value for the metric. For example - for metric `response_time` and window `5m` the most current value will be calculated as mean value of all response times during interval NOW - 5 minutes. 
 
 ### Attributes Reference
 
