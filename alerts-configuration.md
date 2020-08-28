@@ -4,6 +4,7 @@ This page discusses the alert configuration in depth. When using Terraform all t
 
 ```terraform
 resource "siteperf_uptime_monitor" "example_monitor" {
+  every = "1m"
   .........
   alert {
     handler_id = siteperf_alert_handler_slack.alerts.id
@@ -11,7 +12,6 @@ resource "siteperf_uptime_monitor" "example_monitor" {
     crit = 6
     warn = 3
     window = "5m"
-    every = "1m"
   }
   .........
 }
@@ -19,11 +19,11 @@ resource "siteperf_uptime_monitor" "example_monitor" {
 
 ## Argument: every
 
-The every argument is very straightforward. It defines how often the alert check starts. In the above example value `1m` means that the response_time check will be evaluated every 1 minute.
+The `every` argument is very straightforward. It defines how often the uptime check is performed. It is defined on the uptime monitor. In the above example value `1m` means that the uptime check will be performed every 1 minute. All alerts created for this uptime monitor will inherit this value and alert evaluation will be performed every 1 minute as well.
 
 ## Argument: window
 
-This argument is bit more complicated but it allows you to construct more intelligent alerts that will not generate many false positives. 
+This allows you to construct more intelligent alerts that will not generate many false positives. 
 
 Window defines the time interval used to calculate the value for the metric. In the above example value `5m` means that the data used for calculating the metric value will be coming from `NOW - 5 minutes` timeframe. Combining this with `every` set to `1m` the most current metric value will always be calculated using latest 5 values.     
 
@@ -57,7 +57,7 @@ Example values:
 * every - 1m - check the uptime percentage every minute
 * window - 15m - use data from latest 15 minutes to calculate the uptime percentage. The bigger the window the smaller percentage drop will be due to single uptime check failure. 
 
-You can easily calculate how many failures will trigger an alert. First calculate the number of checks that will run within a window (every `1m` and window `15m` means there will be 15 checks within window) and use following formula to calculate, for example, how many failure will trigger warning alert with threshold set to 90: `-0.9 * metrics_in_window + metrics_in_window` 
+You can easily calculate how many failures will trigger an alert. First calculate the number of checks that will run within a window (every `1m` and window `15m` means there will be 15 checks within window) and use following formula to calculate, for example, how many failure will trigger warning alert with threshold set to 95: `-0.95 * metrics_in_window + metrics_in_window`. 
 
 ### Example
 
@@ -68,7 +68,6 @@ You can easily calculate how many failures will trigger an alert. First calculat
     crit = 90
     warn = 95
     window = "15m"
-    every = "1m"
   }
 ```
 
