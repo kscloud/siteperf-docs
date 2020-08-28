@@ -1,5 +1,5 @@
 # About
-SitePerf is an ultimate endpoint monitoring tool for DevOps and QA Engineers. 
+SitePerf is an ultimate endpoint monitoring tool made by engineers for engineers. 
 
 
 ## Configuration
@@ -12,3 +12,5 @@ At SitePerf we took a different approach. We allow only programmatic configurati
 ## Documentation
 
 * [Terraform provider documentation](https://kscloud.github.io/siteperf-docs/terraform-provider.html)
+* [Alerts configuration](https://kscloud.github.io/siteperf-docs/alerts-configuration.html)
+
