@@ -64,7 +64,7 @@ You can easily calculate how many failures will trigger an alert. First calculat
 ```terraform
   alert {
     handler_id = siteperf_alert_handler_slack.alerts.id
-    metric = "response_time"
+    metric = "uptime"
     crit = 90
     warn = 95
     window = "15m"
