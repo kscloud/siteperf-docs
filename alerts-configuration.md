@@ -57,6 +57,7 @@ Example values:
 * every - 1m - check the uptime percentage every minute
 * window - 15m - use data from latest 15 minutes to calculate the uptime percentage. The bigger the window the smaller percentage drop will be due to single uptime check failure. 
 
+You can easily calculate how many failures will trigger an alert. First calculate the number of checks that will run within a window (every `1m` and window `15m` means there will be 15 checks within window) and use following formula to calculate, for example, how many failure will trigger warning alert with threshold set to 90: `-0.9 * metrics_in_window + metrics_in_window` 
 
 ### Example
 
